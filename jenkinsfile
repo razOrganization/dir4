@@ -1,0 +1,14 @@
+#!groovy
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'GENDER', choices: ['Mr\nMrs'], description: 'select your gender')   
+    }
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.GENDER}"
+            }
+        }
+    }
+}
